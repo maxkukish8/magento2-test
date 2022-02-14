@@ -1,0 +1,49 @@
+<?php
+/* @var Codifi\ValidationRule\Block\Hello $block */
+?>
+<label><?= __("Data retrieved from Block is ") ?></label>
+<h1><?= $block->getText() ?></h1>
+
+<div id="emipro-ko-example" data-bind="scope:'emipro-ko-example'">
+
+    <p data-bind="text: sayHello"></p>
+    <p></p>
+    <div class="emipro-knockout-data-bind-example" data-bind="text:getText()"></div>
+    <p></p>
+    <input type="text" id="datepicker2" name="datepicker" placeholder="YYYY-MM-DD" data-bind="click:getDateCust()">
+    <p></p>
+    <input type="text" data-bind="textInput: inputText">
+    <p></p>
+    <input type="text" placeholder="test" data-bind="text: inputText" />
+    <p></p>
+    <input class="test" type="text" data-bind="setTimeout, visible: isVisible">
+    <p></p>
+    <button data-bind="click:getClick">Click</button>
+    <p></p>
+    <div>
+        <input type="text" data-bind="textInput: firstName">
+        <p></p>
+        <input type="text" data-bind="textInput: lastName">
+        <p></p>
+        <p data-bind="text: fullName()"></p>
+        <p></p>
+    </div>
+    <p></p>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "emipro-ko-example": {
+                        "component": "Codifi_ValidationRule/js/kotemplate",
+                        "template" : "Codifi_ValidationRule/kotemplate"
+                        }
+                    }
+                }
+            }
+    }
+</script>
+

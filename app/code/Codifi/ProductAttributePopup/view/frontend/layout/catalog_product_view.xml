@@ -1,0 +1,7 @@
+<page layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes.how.to.use" after="product.info.overview" template="Codifi_ProductAttributePopup::product/view/attribute_custom.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

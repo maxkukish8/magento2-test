@@ -1,0 +1,30 @@
+& when (@media-common = true) {
+    .comment-section-wrapper {
+        margin-top: 20px;
+        .small-title {
+            font-weight: bold;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+    }
+    .comment-section {
+        .step-title {
+            font-weight: bold;
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}

@@ -1,0 +1,25 @@
+<?php
+/* @var Codifi\SystemMessage\Block\CustomPage $block */
+?>
+<h1><?= $block->getText() ?></h1>
+
+<div data-mage-init='{"custommessage": {}}'>
+    <form id="customForm">
+        <label for="tname">Text</label>
+        <input type="text" id="tname" name="text" placeholder="Input text.." required style="margin-bottom: 20px;">
+
+        <br>
+
+        <input type="radio" id="errorMessage" name="message" value="Error Message">
+        <label for="errorMessage">Error Message</label >
+
+        <br>
+
+        <input type="radio" id="successMessage" name="message" value="Success Message">
+        <label for="successMessage">Success Message</label>
+
+        <br>
+
+        <input id="show-message" type="submit" value="Show Message" style="margin-top: 20px;">
+    </form>
+</div>

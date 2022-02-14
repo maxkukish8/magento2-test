@@ -1,0 +1,30 @@
+& when (@media-common = true) {
+    .step-content.confirmation-step {
+        display: flex;
+        button {
+            width: 70px;
+        }
+        .button.continue {
+            background: green;
+            border: 1px solid green;
+        }
+        .button.stop {
+            background: red;
+            border: 1px solid red;
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}

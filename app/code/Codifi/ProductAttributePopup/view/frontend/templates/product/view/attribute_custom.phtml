@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product view template
+ *
+ * @see \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+?>
+
+<div class="product attribute overview">
+    <!--<div data-mage-init="{'popupAttribute': {}}"><a id="click-info">Information</a></div>-->
+    <div><a id="click-info">Information</a></div>
+    <div id="popup-attribute">
+        <?php echo $_product->getResource()->getAttribute('information')->getFrontend()->getValue($_product); ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                buttons: [{
+                    text: $.mage.__('Continue'),
+                    class: 'mymodal',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            let $myModal = $('#popup-attribute');
+            let popup = modal(options, $myModal);
+
+            $("#click-info").click(function() {
+                $myModal.modal('openModal');
+            });
+
+        }
+    );
+</script>
