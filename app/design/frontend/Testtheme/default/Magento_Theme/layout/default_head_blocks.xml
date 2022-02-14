@@ -1,0 +1,9 @@
+<page xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css after="-" src="css/select2.min.css"/>
+        <css after="-" src="css/slick.css"/>
+        <css after="-" src="css/slick-theme.css"/>
+
+        <script src="js/custom.js"/>
+    </head>
+</page>

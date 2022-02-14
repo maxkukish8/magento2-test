@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product view template
+ *
+ * @see \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+?>
+
+<div class="product attribute video">
+    <div><a id="open-video" class="button-open-video">Open Video</a></div>
+    <div id="popup-video">
+        <?php echo $_product->getResource()->getAttribute('video_popup')->getFrontend()->getValue($_product); ?>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: 'close-modal',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#popup-video'));
+            $("#open-video").on('click',function(){
+                $("#popup-video").modal("openModal");
+            });
+
+            var video = $("#youtube1").attr("src");
+
+            $('.action-close').on('click', function() {
+                $("#youtube1").attr("src","");
+                $("#youtube1").attr("src",video);
+            });
+            $('.close-modal').on('click', function() {
+                $("#youtube1").attr("src","");
+                $("#youtube1").attr("src",video);
+            });
+            $(document).mouseup(function (e){
+                var div = $("#popup-video");
+                if (!div.is(e.target)
+                && div.has(e.target).length === 0) {
+                    $("#youtube1").attr("src","");
+                    $("#youtube1").attr("src",video);
+                }
+            });
+        }
+    );
+</script>
+

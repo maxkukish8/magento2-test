@@ -1,0 +1,117 @@
+& when (@media-common = true) {
+    .test-block-content {
+        margin: 20px 0 0;
+    }
+
+    .cms-home {
+        .page-wrapper {
+            position: relative;
+        }
+        .columns .column.main {
+            padding-bottom: 0;
+        }
+    }
+    .home-page_wrapper {
+        .bg-img {
+            top: -170px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            min-height: 700px;
+        }
+        .content {
+            p, a {
+                color: @color-white;
+                font-weight: 900;
+                font-size: 20px;
+            }
+
+        }
+    }
+    .body-color-active {
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.7;
+    }
+    .popup-bg {
+        height: auto;
+        background-color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        padding: 20px 20px 0 20px;
+    }
+    
+    .action-help-shipping {
+        cursor: pointer;
+        &:before {
+            font-size: 21px;
+            line-height: inherit;
+            color: #bbb;
+            content: '\e623';
+            font-family: 'luma-icons';
+            vertical-align: middle;
+            display: inline-block;
+            font-weight: normal;
+            overflow: hidden;
+            speak: none;
+            text-align: center;
+        }
+        &:hover:before {
+            color: #333;
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .test-block-content {
+        display: none;
+    }
+    .cms-home {
+        .page-main {
+            padding: 0;
+        }
+    }
+    .popup-bg {
+        width: 80%;
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .test-button {
+        display: none;
+    }
+    .home-page_wrapper {
+        .content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 20px 0;
+        }
+    }
+    .nav-sections {
+        float: right;
+    }
+    .popup-bg {
+        width: 50%;
+    }
+    .block.related {
+        .products-related {
+            width: 20%;
+        }
+    }
+}
