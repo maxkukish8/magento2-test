@@ -1,0 +1,32 @@
+<!--Use 'stepCode' as id attribute-->
+<li id="mynewstep" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-role="title">Are you presently 18 years of age or older?</div>
+    <div id="checkout-step-title"
+         class="step-content confirmation-step"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span><!-- ko i18n: 'Yes'--><!-- /ko --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form novalidate="novalidate">
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-stop" type="submit" class="button action stop primary" data-bind="click: showPopup">
+                        <span><!-- ko i18n: 'No'--><!-- /ko --></span>
+                    </button>
+                    <div id="popup-modal-step" style="display: none">
+                        <p>Sorry, you're not allowed to make a purchase</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</li>

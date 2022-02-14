@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codifi_AdminCustomPage::page_head" title="Custom" module="Codifi_AdminCustomPage" sortOrder="100" resource="Codifi_AdminCustomPage::page_head" />
+        <add id="Codifi_AdminCustomPage::page" title="Custom Page" module="Codifi_AdminCustomPage" sortOrder="20" parent="Codifi_AdminCustomPage::page_head" action="codifi_page/post" resource="Codifi_AdminCustomPage::page" />
+    </menu>
+</config>

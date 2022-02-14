@@ -1,0 +1,21 @@
+& when (@media-common = true) {
+    .checkout-shipping-method {
+        .date-wrapper {
+            width: 150px;
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
